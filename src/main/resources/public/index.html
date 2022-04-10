@@ -22,7 +22,7 @@
             <h4>{{firstName}} <b>{{lastName}}</b></h4>
             {{title}}
             <small>
-               <br>{{company}}
+               <br>{{hometownzip}}
                <br>{{track}} track
             </small>
         </div>
@@ -71,9 +71,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-xs-3" for="editCompany">Company:</label>
+                    <label class="control-label col-xs-3" for="editHometownzip">Hometownzip:</label>
                     <div class="col-xs-8">
-                        <input type="text" id="editCompany" name="editCompany" value="{{company}}" class="form-control" required>
+                        <input type="text" id="editHometownzip" name="editHometownzip" value="{{hometownzip}}" class="form-control" required>
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                 <div class="col-xs-4">
                     <select id="searchType" class="form-control">
                         <option value="lastname">By last name</option>
-                        <option value="company">By company</option>
+                        <option value="hometownzip">By hometownzip</option>
                         <option value="track">By track</option>
                     </select>
                 </div>
@@ -191,9 +191,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-3" for="company">Company:</label>
+                    <label class="control-label col-xs-3" for="hometownzip">Hometownzip:</label>
                     <div class="col-xs-5">
-                        <input type="text" id="company" name="company" value="" class="form-control" required>
+                        <input type="text" id="hometownzip" name="hometownzip" value="" class="form-control" required>
                     </div>
                 </div>
                 <br> <br>

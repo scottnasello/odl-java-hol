@@ -43,7 +43,7 @@ public class EmployeeService implements Service {
     public void update(Routing.Rules rules) {
         rules.get("/", this::getAll)
                 .get("/lastname/{lastname}", this::getByLastName)
-                .get("/company/{companyName}", this::getByCompany)
+                .get("/hometownzip/{hometownzipName}", this::getByHometownzip)
                 .get("/track/{track}", this::getByTrack)
                 .get("/{id}", this::getEmployeesById);
     }
@@ -90,18 +90,18 @@ public class EmployeeService implements Service {
     }
 
 
-    private void getByCompany(final ServerRequest request, final ServerResponse response) {
-        LOGGER.fine("getByCompany");
+    private void getByHometownzip(final ServerRequest request, final ServerResponse response) {
+        LOGGER.fine("getByHometownzip");
 
         try {
-            var companyName = request.path().param("companyName").trim();
-            if (Util.isValidQueryStr(response, companyName)) {
-                var match = this.employees.getByCompany(companyName);
+            var hometownzipName = request.path().param("hometownzipName").trim();
+            if (Util.isValidQueryStr(response, hometownzipName)) {
+                var match = this.employees.getByHometownzip(hometownzipName);
                 if (match.size() > 0) response.send(match);
-                else Util.sendError(response, 400, "getByCompany - not found: " + companyName);
+                else Util.sendError(response, 400, "getByHometownzip - not found: " + hometownzipName);
             }
         } catch (Exception e) {
-            Util.sendError(response, 500, "Internal error! getByCompany: " + e.getMessage());
+            Util.sendError(response, 500, "Internal error! getByHometownzip: " + e.getMessage());
         }
 
     }

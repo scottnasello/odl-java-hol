@@ -22,15 +22,15 @@ public final class Employee {
     private final String lastName;
     private final String title;
     private final Track track;
-    private final String company;
+    private final String hometownzip;
 
-    public Employee(String id, String firstName, String lastName, String title, String company, Track track) {
+    public Employee(String id, String firstName, String lastName, String title, String hometownzip, Track track) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
         this.track = track;
-        this.company = company;
+        this.hometownzip = hometownzip;
     }
 
     public String getId() {
@@ -51,14 +51,14 @@ public final class Employee {
         return this.track;
     }
 
-    public String getCompany() {
-        return this.company;
+    public String getHometownzip() {
+        return this.hometownzip;
     }
 
     @Override
     public String toString() {
         return "ID: " + id + " First Name: " + firstName + " Last Name: " + lastName + " Title: " + title
-               + " Track: " + track + " Company: " + company ;
+               + " Track: " + track + " Hometownzip: " + hometownzip ;
     }
 
 }

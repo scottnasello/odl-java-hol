@@ -109,7 +109,7 @@ function renderEmployees(employee){
         "lastName" : employee.lastName,
         "id" : employee.id,
         "title" : employee.title,
-        "company" : employee.company,
+        "hometownzip" : employee.hometownzip,
         "track" : employee.track
     });
     return rendered;
@@ -123,7 +123,7 @@ function renderEmployeeDetails(employee){
         "firstName" : employee.firstName,
         "lastName" : employee.lastName,
         "title" : employee.title,
-        "company" : employee.company,
+        "hometownzip" : employee.hometownzip,
         "track" : employee.track
     });
     return rendered;
@@ -135,7 +135,7 @@ function save() {
         firstName: $("#firstName").val(),
         lastName: $("#lastName").val(),
         title: $("#title").val(),
-        company: $("#company").val(),
+        hometownzip: $("#hometownzip").val(),
         track: $("#track").val()
     };
     $.ajax({
@@ -147,7 +147,7 @@ function save() {
         $("#firstName").val("");
         $("#lastName").val("");
         $("#title").val("");
-        $("#company").val("");
+        $("#hometownzip").val("");
         $("#track").val("");
         loadEmployees();
     });
@@ -161,7 +161,7 @@ function updateEmployee() {
         lastName: $("#editLastName").val(),
         title: $("#editTitle").val(),
         track: $("#editTrack").val(),
-        company: $("#editCompany").val()
+        hometownzip: $("#editHometownzip").val()
     };
     $("#detail").html("UPDATING...");
     $.ajax({

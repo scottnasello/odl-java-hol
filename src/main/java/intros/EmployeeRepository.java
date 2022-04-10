@@ -62,10 +62,10 @@ public final class EmployeeRepository {
     }
 
 
-    public List<Employee> getByCompany(String company) {
+    public List<Employee> getByHometownzip(String hometownzip) {
 
         List<Employee> matchList = employees.stream()
-                .filter((e) -> (e.getCompany().toLowerCase().contains(company.toLowerCase())))
+                .filter((e) -> (e.getHometownzip().toLowerCase().contains(hometownzip.toLowerCase())))
                 .collect(Collectors.toList());
         return matchList;
     }
