@@ -17,5 +17,5 @@
 package intros;
 
 public enum Track {
-    JAVA, DB, MYSQL
+    JAVA, DB, MYSQL, SJ, PORTLAND, ISRAEL
 }
