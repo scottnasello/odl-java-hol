@@ -25,5 +25,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-env:
- JAVA_HOME: /usr/lib/jvm/java-15-openjdk/
+    - name: Publish JAR
+      run: ./mvnw -B release:prepare release:perform
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
