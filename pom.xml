@@ -29,6 +29,7 @@
     </parent>
     <groupId>odl.intros</groupId>
     <artifactId>intros-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <name>ODL Conference</name>
 
     <properties>
