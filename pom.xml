@@ -34,7 +34,7 @@
 
     <properties>
         <mainClass>intros.Main</mainClass>
-	<git.repository>scottnasello/odl-java-hol-ci</git.repository>
+	<git.repository>scottnasello/odl-java-hol</git.repository>
         <project.scm.id>github</project.scm.id>
     </properties>
 
