@@ -34,4 +34,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     - name: Save JAR
-      run: mkdir staging && cp target/*jar-with-dependencies.jar staging
+      run: mkdir staging && cp target/intros-app*.jar staging
