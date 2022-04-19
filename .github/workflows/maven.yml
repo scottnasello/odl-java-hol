@@ -26,6 +26,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish JAR
-      run: ./mvnw -B release:prepare release:perform
+      run: mvn -B release:prepare release:perform
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
