@@ -38,7 +38,7 @@ jobs:
     - name: Deploy JAR to OCI
       uses: easingthemes/ssh-deploy@main
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: >-  
           -rltgoDzvO
           --exclude='.git'
