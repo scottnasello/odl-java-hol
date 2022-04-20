@@ -54,6 +54,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: | 
-            cp /home/opc/odl-java-hol/target/staging /home/opc/odl-java-hol/target/
+            cp /home/opc/odl-java-hol/target/staging/intros-app.jar /home/opc/odl-java-hol/target/
             cd /home/opc/odl-java-hol/target/
             java --enable-preview -jar -intros-app.jar
