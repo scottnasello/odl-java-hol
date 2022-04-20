@@ -71,4 +71,4 @@ jobs:
           script: | 
             cd /home/opc/odl-java-hol/target/
             kill -9 $(sudo lsof -t -i:8080)
-            java --enable-preview -jar intros-app.jar
+            echo "java --enable-preview -jar intros-app.jar" | at now +0 minutes
