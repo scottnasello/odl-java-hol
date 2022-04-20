@@ -35,3 +35,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     - name: Save JAR
       run: mkdir staging && cp target/intros-app*.jar staging
+    - name: Deploy JAR to OCI
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+        ARGS: >-  
+          -rltgoDzvO
+          --exclude='.git'
+          --exclude='node_modules/'
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST_PROD }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER_PROD }}
+        TARGET: /home/opc/odl-java-hol/target/ 
