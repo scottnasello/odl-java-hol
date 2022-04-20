@@ -38,7 +38,7 @@ jobs:
     - name: Deploy JAR to OCI
       uses: easingthemes/ssh-deploy@main
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: >-  
           -rltgoDzvO
           --exclude='.git'
@@ -46,3 +46,14 @@ jobs:
         REMOTE_HOST: ${{ secrets.REMOTE_HOST_PROD }}
         REMOTE_USER: ${{ secrets.REMOTE_USER_PROD }}
         TARGET: /home/opc/odl-java-hol/target/
+    - name: Post Deploy
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.REMOTE_HOST_PROD }}
+          username: ${{ secrets.REMOTE_USER_PROD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: | 
+            cp /home/opc/odl-java-hol/target/staging /home/opc/odl-java-hol/target/
+            cd /home/opc/odl-java-hol/target/
+            java --enable-preview -jar -intros-app.jar
