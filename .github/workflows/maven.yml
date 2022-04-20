@@ -55,5 +55,19 @@ jobs:
           port: 22
           script: | 
             cp /home/opc/odl-java-hol/target/staging/intros-app.jar /home/opc/odl-java-hol/target/
+
+  webserver:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Post Deploy
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.REMOTE_HOST_PROD }}
+          username: ${{ secrets.REMOTE_USER_PROD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: | 
             cd /home/opc/odl-java-hol/target/
-            java --enable-preview -jar -intros-app.jar
+            java --enable-preview -jar intros-app.jar
