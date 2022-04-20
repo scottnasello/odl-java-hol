@@ -57,7 +57,7 @@ jobs:
             cp /home/opc/odl-java-hol/target/staging/intros-app.jar /home/opc/odl-java-hol/target/
 
   webserver:
-  
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
